@@ -11,6 +11,7 @@
     <modules>
         <module>spring-mvc-01-servlet</module>
         <module>springmvc-02</module>
+        <module>springmvc-03</module>
     </modules>
 
     <dependencies>
@@ -40,4 +41,26 @@
             <version>1.2</version>
         </dependency>
     </dependencies>
+
+    <!--解决：Maven可能存在资源过滤的问题-->
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
 </project>
